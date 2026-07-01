@@ -1,0 +1,80 @@
+==============================
+   ARIA - AI ASSISTANT
+   Project Structure
+==============================
+
+📦 project-root/
+│
+├── 📁 backend/                    ← Python Flask backend
+│   ├── app.py                     (Main Flask app, runs on port 5000)
+│   ├── database.py                (SQLite database functions)
+│   ├── tool_dispatcher.py         (Tool execution logic)
+│   ├── tools.py                   (Available tools for AI)
+│   ├── system_prompt.py           (AI system instructions)
+│   └── conversations.db           (Auto-created SQLite database)
+│
+├── 📁 frontend/                   ← HTML/CSS/JS frontend
+│   ├── index.html                 (Main HTML file)
+│   ├── chat.js                    (Chat logic, connects to backend)
+│   └── style.css                  (Styling)
+│
+├── 📄 .env                        ← Environment variables (API keys)
+├── 📄 requirements.txt            ← Python dependencies
+├── 📄 README.md                   ← Full setup instructions
+├── 📄 run.bat                     ← Quick start script (Windows)
+├── 📄 run.sh                      ← Quick start script (macOS/Linux)
+└── 📄 PROJECT_STRUCTURE.txt       ← This file
+
+==============================
+   QUICK START
+==============================
+
+1. Create & activate virtual environment:
+   python -m venv venv
+   
+   Windows: venv\Scripts\activate
+   macOS/Linux: source venv/bin/activate
+
+2. Install dependencies:
+   pip install -r requirements.txt
+
+3. Set up .env file with your OpenAI API key
+
+4. Run backend (Terminal 1):
+   cd backend && python app.py
+   
+5. Run frontend (Terminal 2):
+   cd frontend && python -m http.server 3000
+
+6. Open browser: http://localhost:3000
+
+==============================
+   KEY FIXES APPLIED
+==============================
+
+✅ CORS Issue Resolved
+   - Proper CORS headers on backend
+   - Frontend URL fixed to port 5000
+
+✅ Port Mismatch Fixed
+   - Frontend was calling port 3000 (wrong)
+   - Now correctly calls port 5000 (backend)
+
+✅ Clean Organization
+   - Separated backend and frontend folders
+   - Environment variables in .env
+   - All imports properly configured
+
+✅ Error Handling
+   - Console logging for debugging
+   - Better error messages in UI
+
+==============================
+   URLS TO REMEMBER
+==============================
+
+Frontend:  http://localhost:3000
+Backend:   http://localhost:5000/chat
+API Call:  POST http://localhost:5000/chat
+
+==============================
