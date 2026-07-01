@@ -1,0 +1,19 @@
+{
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": [
+    {
+      "key": "OPENAI_API_KEY",
+      "description": "OpenAI API key for GPT-4 access",
+      "type": "secret"
+    }
+  ],
+  "regions": ["iad1"],
+  "functions": {
+    "api/**": {
+      "maxDuration": 60
+    }
+  }
+}
